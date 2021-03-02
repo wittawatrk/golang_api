@@ -39,7 +39,7 @@ func main() {
 		userRoutes.PUT("/profile", userController.Update)
 	}
 
-	bookRoutes := r.Group("api/books", middleware.AuthorizeJWT(jwtService))
+	bookRoutes := r.Group("api/books")
 	{
 		bookRoutes.GET("/", bookController.All)
 		bookRoutes.POST("/", bookController.Insert)
